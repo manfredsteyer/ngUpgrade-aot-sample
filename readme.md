@@ -8,7 +8,7 @@
 
 - ``app/app.module.ts``: Angular 1 module
 - ``app/app2.module.ts``: Angular 2 module
-- ``app/app.ts`: Bootstraps the hybrid application
+- ``app/app.ts``: Bootstraps the hybrid application
 
 ## Problems
 
