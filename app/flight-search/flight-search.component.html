@@ -1,0 +1,46 @@
+<h1>Flight Search!</h1>
+
+<p>
+<i>Between the stars, the ng1-component should be displayed:</i>
+*<ng1></ng1>*
+</p>
+
+<form name="form" novalidate>
+
+    <div class="form-group">
+        <label>From:</label>
+        <input
+                name="from"
+                class="form-control"
+                [(ngModel)]="from">
+    </div>
+
+    <div class="form-group">
+        <label>To:</label>
+        <input class="form-control" [(ngModel)]="to" name="to">
+    </div>
+    <div class="form-group">
+        <button
+                class="btn btn-primary"
+                (click)="search()">Search!</button>
+    </div>
+</form>
+
+<div class="row">
+    <div *ngFor="let f of getFlights()" class="col-sm-4" style="padding:20px;">
+
+        <i>Between the stars, the flight-card component should be displayed</i>
+
+        *<flight-card
+                [item]="f"
+                [selectedItem]="selectedFlight"
+                (selectedItemChange)="selectedFlight = $event"></flight-card>*
+
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="row">
+<pre>Basket
+----------------------
+{{selectedFlight | json }}</pre>
+</div>

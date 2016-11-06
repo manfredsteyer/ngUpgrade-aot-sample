@@ -1,0 +1,21 @@
++++
+<div style="padding:20px;"
+     ng-style="{'background-color': ($ctrl.selectedItem == $ctrl.item) ?  'orange' : 'lightsteelblue' }" >
+
+    ***
+
+    <h2>{{$ctrl.item.from}} - {{$ctrl.item.to}}</h2>
+    <p>Id #{{$ctrl.item.id}}</p>
+    <p>Date: {{$ctrl.item.date | date:'short'}}</p>
+
+    <p>
+        <input
+                type="button"
+                value="Select"
+                class="btn btn-default"
+                ng-click="$ctrl.select()" />
+
+        <a class="btn btn-default" href="#/flightBooking/flight/{{$ctrl.item.id}}">Edit</a>
+
+    </p>
+</div>

@@ -1,0 +1,34 @@
+<h1>Passenger Search</h1>
+
+<form name="form" novalidate>
+
+    <div class="form-group">
+        <label>Name:</label>
+        <input name="from"
+               class="form-control"
+               ng-model="$ctrl.name">
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-default"
+                ng-click="$ctrl.search()">Search!</button>
+    </div>
+
+</form>
+
+<div class="row">
+    <div ng-repeat="p in $ctrl.passenger" class="col-sm-4" style="padding:20px;">
+        <passenger-card
+                item="p"
+                selected-item="$ctrl.selectedPassenger"
+                selected-item-change="$ctrl.selectedPassenger = $locals">
+        </passenger-card>
+
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="row">
+    <pre>Selected Passenger
+----------------------
+{{$ctrl.selectedPassenger | json }}</pre>
+</div>

@@ -1,0 +1,36 @@
+<h1>{{$ctrl.info}}</h1>
+<p>&nbsp;</p>
+<tabs>
+    <tab title="Flight">
+        <div ng-if="$ctrl.message" style="color: red">
+            {{$ctrl.message}}
+        </div>
+
+        <div class="form-group">
+            <label>Id</label>
+            <input class="form-control" ng-model="$ctrl.flight.id">
+        </div>
+
+        <div class="form-group">
+            <label>From</label>
+            <input class="form-control" ng-model="$ctrl.flight.from">
+        </div>
+
+        <div class="form-group">
+            <label>To</label>
+            <input class="form-control" ng-model="$ctrl.flight.to">
+        </div>
+
+        <div class="form-group">
+            <label>Date</label>
+            <input class="form-control" ng-model="$ctrl.flight.date">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="$ctrl.save()">Save!</button>
+        </div>
+    </tab>
+    <tab title="Details">
+        <pre>{{ $ctrl.flight | json }}</pre>
+    </tab>
+</tabs>
