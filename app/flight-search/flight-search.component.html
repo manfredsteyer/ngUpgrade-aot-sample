@@ -29,12 +29,10 @@
 <div class="row">
     <div *ngFor="let f of getFlights()" class="col-sm-4" style="padding:20px;">
 
-        <i>Between the stars, the flight-card component should be displayed</i>
-
-        *<flight-card
+       <flight-card
                 [item]="f"
                 [selectedItem]="selectedFlight"
-                (selectedItemChange)="selectedFlight = $event"></flight-card>*
+                (selectedItemChange)="selectedFlight = $event"></flight-card>
 
     </div>
 </div>

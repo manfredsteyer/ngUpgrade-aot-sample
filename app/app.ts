@@ -3,6 +3,7 @@ import './app.routes';
 import {PlatformRef, NgModuleFactory} from "@angular/core";
 import {UpgradeModule} from "@angular/upgrade/static";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {platformBrowser} from "@angular/platform-browser";
 import {AppModuleNgFactory} from "../aot/app/app2.module.ngfactory";
 
 export function bootstrap(
@@ -17,7 +18,7 @@ export function bootstrap(
 }
 
 bootstrap(
-    platformBrowserDynamic(),
+    platformBrowser(),
     AppModuleNgFactory,
     document.body,
     'flight-app')

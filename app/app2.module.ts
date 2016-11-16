@@ -25,11 +25,15 @@ export class FlightCard extends UpgradeComponent {
     constructor(elementRef: ElementRef, injector: Injector) {
         super('flightCard', elementRef, injector);
     }
+
+    ngOnInit() { return super.ngOnInit(); }
+    ngOnChanges(c) { return super.ngOnChanges(c); }
+
 }
 
 @Directive({selector: 'ng1'})
 export class Ng1 extends UpgradeComponent {
-
+    ngOnInit() { return super.ngOnInit(); }
     constructor(elementRef: ElementRef, injector: Injector) {
         super('ng1', elementRef, injector);
     }
@@ -61,12 +65,12 @@ export function createBookingEventService(injector) {
     providers: [
         PassengerService,
         {
-            provide: 'flightService',
+            provide: FlightService,
             useFactory: createFlightService,
             deps: ['$injector']
         },
         {
-            provide: 'bookingEventService',
+            provide: BookingEventService,
             useFactory: createBookingEventService,
             deps: ['$injector']
         }

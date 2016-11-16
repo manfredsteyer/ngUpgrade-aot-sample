@@ -10,6 +10,8 @@ import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 import { FlightSearchComponent } from "./flight-search/flight-search.component";
 import { PassengerService } from "./services/passenger.service";
+import { FlightService } from "./services/flight.service";
+import { BookingEventService } from "./services/booking-event.service";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { UpgradeModule } from "@angular/upgrade/static";
@@ -19,6 +21,8 @@ export var FlightCard = (function (_super) {
     function FlightCard(elementRef, injector) {
         _super.call(this, 'flightCard', elementRef, injector);
     }
+    FlightCard.prototype.ngOnInit = function () { return _super.prototype.ngOnInit.call(this); };
+    FlightCard.prototype.ngOnChanges = function (c) { return _super.prototype.ngOnChanges.call(this, c); };
     FlightCard.decorators = [
         { type: Directive, args: [{ selector: 'flight-card' },] },
     ];
@@ -39,6 +43,7 @@ export var Ng1 = (function (_super) {
     function Ng1(elementRef, injector) {
         _super.call(this, 'ng1', elementRef, injector);
     }
+    Ng1.prototype.ngOnInit = function () { return _super.prototype.ngOnInit.call(this); };
     Ng1.decorators = [
         { type: Directive, args: [{ selector: 'ng1' },] },
     ];
@@ -78,12 +83,12 @@ export var AppModule = (function () {
                     providers: [
                         PassengerService,
                         {
-                            provide: 'flightService',
+                            provide: FlightService,
                             useFactory: createFlightService,
                             deps: ['$injector']
                         },
                         {
-                            provide: 'bookingEventService',
+                            provide: BookingEventService,
                             useFactory: createBookingEventService,
                             deps: ['$injector']
                         }

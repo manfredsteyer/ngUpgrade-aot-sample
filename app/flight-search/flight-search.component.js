@@ -1,6 +1,6 @@
 import { FlightService } from "../services/flight.service";
 import { BookingEventService } from "../services/booking-event.service";
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 export var FlightSearchComponent = (function () {
     function FlightSearchComponent(flightService, bookingEventService) {
         this.flightService = flightService;
@@ -32,8 +32,8 @@ export var FlightSearchComponent = (function () {
     ];
     /** @nocollapse */
     FlightSearchComponent.ctorParameters = [
-        { type: FlightService, decorators: [{ type: Inject, args: ['flightService',] },] },
-        { type: BookingEventService, decorators: [{ type: Inject, args: ['bookingEventService',] },] },
+        { type: FlightService, },
+        { type: BookingEventService, },
     ];
     return FlightSearchComponent;
 }());

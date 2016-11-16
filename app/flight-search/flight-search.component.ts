@@ -10,8 +10,8 @@ import { Component, Inject } from '@angular/core';
 export class FlightSearchComponent {
 
     constructor(
-        @Inject('flightService') private flightService: FlightService,
-        @Inject('bookingEventService') private bookingEventService: BookingEventService) {
+        private flightService: FlightService,
+        private bookingEventService: BookingEventService) {
     }
 
     public from: string = 'Hamburg';
